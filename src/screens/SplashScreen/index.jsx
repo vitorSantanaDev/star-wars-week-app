@@ -1,19 +1,14 @@
 import React from 'react'
-import { View } from 'react-native'
 
 import { APP_TEXT } from '../../util/appTexts'
 
-import { Heading, Logo } from '../../components'
-
-import { styleSheet } from './styles'
+import { Heading, Logo, ScreenWrapper } from '../../components'
 
 export default function SplashScreen() {
-  const styles = styleSheet({})
-
   return (
-    <View style={styles.Wrapper}>
+    <ScreenWrapper alignItem="center" justifyContent="center">
       <Logo size={64} />
       <Heading size={24} font="bold" text={APP_TEXT.SPLASH_SCREEN_TEXT} />
-    </View>
+    </ScreenWrapper>
   )
 }

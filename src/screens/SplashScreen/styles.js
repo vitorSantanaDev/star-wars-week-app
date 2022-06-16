@@ -5,11 +5,6 @@ export function styleSheet(props) {
   const {} = props
 
   return StyleSheet.create({
-    Wrapper: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: theme.colors.backLight,
-    },
+    Wrapper: {},
   })
 }
