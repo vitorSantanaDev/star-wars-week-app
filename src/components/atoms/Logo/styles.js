@@ -1,9 +1,9 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native'
 
 export function styleSheet(props) {
-  const {} = props;
+  const {} = props
 
   return StyleSheet.create({
     LogoStyle: {},
-  });
+  })
 }
