@@ -13,7 +13,7 @@ export default function SplashScreen() {
   return (
     <View style={styles.Wrapper}>
       <Logo size={64} />
-      <Heading size={24} weight="700" text={APP_TEXT.SPLASH_SCREEN_TEXT} />
+      <Heading size={24} font="bold" text={APP_TEXT.SPLASH_SCREEN_TEXT} />
     </View>
   )
 }
