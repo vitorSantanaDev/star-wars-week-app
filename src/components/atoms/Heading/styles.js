@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { theme } from '../../../styles'
+import { theme } from '~/styles'
 
 export function styleSheet(props) {
   const { size = 28, font, color = theme.colors.white } = props
