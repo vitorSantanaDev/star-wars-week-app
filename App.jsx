@@ -1,5 +1,4 @@
 import React from 'react'
-import { View } from 'react-native'
 import AppLoading from 'expo-app-loading'
 import {
   useFonts,
@@ -9,7 +8,7 @@ import {
   SourceSansPro_600SemiBold,
 } from '@expo-google-fonts/source-sans-pro'
 
-import SplashScreen from './src/screens/SplashScreen'
+import Routes from '~/routes'
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -23,9 +22,5 @@ export default function App() {
     return <AppLoading />
   }
 
-  return (
-    <View style={{ flex: 1 }}>
-      <SplashScreen />
-    </View>
-  )
+  return <Routes />
 }
