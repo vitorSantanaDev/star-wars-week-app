@@ -1,4 +1,4 @@
-import { View } from 'react-native'
+import { ScrollView, View } from 'react-native'
 import PropTypes from 'prop-types'
 
 import { styleSheet } from './styles'
@@ -10,7 +10,11 @@ export default function ScreenWrapper({
   justifyContent,
 }) {
   const styles = styleSheet({ direction, alignItem, justifyContent })
-  return <View style={styles.ScreenWrapper}>{children}</View>
+  return (
+    <ScrollView style={styles.ScrollViewWrapper}>
+      <View style={styles.ScreenWrapper}>{children}</View>
+    </ScrollView>
+  )
 }
 
 ScreenWrapper.propTypes = {

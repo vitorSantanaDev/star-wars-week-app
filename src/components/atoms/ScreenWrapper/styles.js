@@ -12,5 +12,8 @@ export function styleSheet(props) {
       alignItems: alignItem ? alignItem : 'flex-start',
       justifyContent: justifyContent ? justifyContent : 'flex-start',
     },
+    ScrollViewWrapper: {
+      backgroundColor: theme.colors.backLight,
+    },
   })
 }
