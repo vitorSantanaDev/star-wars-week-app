@@ -8,7 +8,12 @@ import { theme } from '~/styles'
 
 export default function Logo({ size }) {
   const styles = styleSheet({ size })
-  const sizeMetric = theme.metrics.pixel(size)
+
+  const sizes = {
+    small: 28,
+    large: 64,
+  }
+  const sizeMetric = theme.metrics.pixel(sizes[size])
 
   return (
     <LogoEmpire
@@ -20,5 +25,5 @@ export default function Logo({ size }) {
 }
 
 Logo.propTypes = {
-  size: PropTypes.number,
+  size: PropTypes.string,
 }
