@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import { Text } from 'react-native'
 import { styleSheet } from './styles'
 
-export default function Heading({ text, size, font, color }) {
-  const styles = styleSheet({ size, font, color })
+export default function Heading({ text, size, font, color, ...props }) {
+  const styles = styleSheet({ size, font, color, ...props })
   return <Text style={styles.HeadingStyle}>{text}</Text>
 }
 
