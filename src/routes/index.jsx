@@ -2,7 +2,7 @@ import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-import { SplashScreen, Home } from '~/screens'
+import { SplashScreen, Home, Detail } from '~/screens'
 import { routeName } from './routesName'
 
 export default function Routes() {
@@ -23,6 +23,11 @@ export default function Routes() {
         <Stack.Screen
           name={routeName.HOME}
           component={Home}
+          options={screenOptions}
+        />
+        <Stack.Screen
+          name={routeName.DETAIL}
+          component={Detail}
           options={screenOptions}
         />
       </Stack.Navigator>
