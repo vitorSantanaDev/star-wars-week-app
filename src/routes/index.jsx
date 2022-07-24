@@ -1,14 +1,47 @@
 import * as React from 'react'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-import { SplashScreen, Home, Detail } from '~/screens'
+import { BottomBar } from '~/components'
+
+import { SplashScreen, Home, Detail, Search, Favorites } from '~/screens'
 import { routeName } from './routesName'
+
+const BottomRoute = () => {
+  const Tab = createBottomTabNavigator()
+
+  const defaultOptionsScreen = {
+    header: (_) => null,
+  }
+
+  return (
+    <Tab.Navigator tabBar={(props) => <BottomBar {...props} />}>
+      <Tab.Screen
+        name="Search"
+        component={Search}
+        options={{
+          header: defaultOptionsScreen.header,
+          tabBarLabel: 'Pesquisar',
+        }}
+      />
+      <Tab.Screen options={defaultOptionsScreen} name="Home" component={Home} />
+      <Tab.Screen
+        name="Favorites"
+        component={Favorites}
+        options={{
+          header: defaultOptionsScreen.header,
+          tabBarLabel: 'Favoritos',
+        }}
+      />
+    </Tab.Navigator>
+  )
+}
 
 export default function Routes() {
   const Stack = createNativeStackNavigator()
 
-  const screenOptions = {
+  const defaultOptionsScreen = {
     header: (_) => null,
   }
 
@@ -16,19 +49,19 @@ export default function Routes() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName={routeName.SPLASH_SCREEN}>
         <Stack.Screen
-          name={routeName.SPLASH_SCREEN}
           component={SplashScreen}
-          options={screenOptions}
+          name={routeName.SPLASH_SCREEN}
+          options={defaultOptionsScreen}
         />
         <Stack.Screen
           name={routeName.HOME}
-          component={Home}
-          options={screenOptions}
+          component={BottomRoute}
+          options={defaultOptionsScreen}
         />
         <Stack.Screen
-          name={routeName.DETAIL}
           component={Detail}
-          options={screenOptions}
+          name={routeName.DETAIL}
+          options={defaultOptionsScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
