@@ -18,16 +18,20 @@ const BottomRoute = () => {
   return (
     <Tab.Navigator tabBar={(props) => <BottomBar {...props} />}>
       <Tab.Screen
-        name="Search"
+        options={defaultOptionsScreen}
+        name={routeName.HOME}
+        component={Home}
+      />
+      <Tab.Screen
+        name={routeName.SEARCH}
         component={Search}
         options={{
           header: defaultOptionsScreen.header,
           tabBarLabel: 'Pesquisar',
         }}
       />
-      <Tab.Screen options={defaultOptionsScreen} name="Home" component={Home} />
       <Tab.Screen
-        name="Favorites"
+        name={routeName.FAVORITES}
         component={Favorites}
         options={{
           header: defaultOptionsScreen.header,
