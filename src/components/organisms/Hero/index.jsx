@@ -35,7 +35,7 @@ export default function Hero({ content, onDetail = false }) {
           <Heading text={subtitle} font="regular" size={18} />
           <View style={styles.ButtonsWrapper}>
             <IconButton label="Favoritos" iconName="add-circle-outline" />
-            <PlayButton />
+            <PlayButton onPressHandler={() => console.log('Assitir')} />
             {!onDetail && (
               <IconButton
                 label="Saiba mais"
