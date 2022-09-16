@@ -2,11 +2,11 @@ import React from 'react'
 import { FlatList, View } from 'react-native'
 import PropTypes from 'prop-types'
 
-import { Heading } from '~/components/atoms'
-import { Card } from '~/components/molecules'
+import { Card, Loading, Heading } from '~/components'
+
 import { styleSheet } from './styles'
 
-export default function HomeList({ data, title }) {
+export default function HomeList({ data, title, loading }) {
   const styles = styleSheet({})
 
   function renderItemHandler({ item }) {
@@ -22,13 +22,17 @@ export default function HomeList({ data, title }) {
         marginLeft={24}
         marginBottom={12}
       />
-      <FlatList
-        data={data}
-        horizontal
-        renderItem={renderItemHandler}
-        keyExtractor={(item) => item.id}
-        contentContainerStyle={styles.ListContentStyle}
-      />
+      {loading ? (
+        <Loading />
+      ) : (
+        <FlatList
+          data={data}
+          horizontal
+          renderItem={renderItemHandler}
+          keyExtractor={(item) => item.id}
+          contentContainerStyle={styles.ListContentStyle}
+        />
+      )}
     </View>
   )
 }
