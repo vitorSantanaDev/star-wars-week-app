@@ -4,6 +4,7 @@ import { APP_TEXT } from '../../util/appTexts'
 
 import { Heading, Logo, ScreenWrapper } from '~/components'
 import { routeName } from '~/routes/routesName'
+import { View } from 'react-native'
 
 export default function SplashScreen({ navigation }) {
   function goToHomeScreen() {
